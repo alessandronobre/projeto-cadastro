@@ -16,15 +16,14 @@ public class EmailService {
 
     private final JavaMailSender mailSender;
 
-    public void enviaEmailBoasVindasToUsuario(EmailDto email) throws MessagingException {
+    public void sendEmail(EmailDto email) throws MessagingException {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
         mimeMessageHelper.setSubject(email.getTitulo());
         mimeMessageHelper.setText(email.getConteudo(), true);
         mimeMessageHelper.setTo(email.getDestinatario());
 
-        mailSender.send(mimeMessage);
         log.info("Enviando email para: " + email.getDestinatario() + " ...");
-
+        mailSender.send(mimeMessage);
     }
 }
