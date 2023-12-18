@@ -6,7 +6,6 @@ Teremos um microservice que realizara o cadastro de usuarios no banco de dados e
 
 Principais tecnologias utilizadas:
 
-|:----------------|
 | Java            |          
 | Spring Boot     |
 | Spring Data     | 
